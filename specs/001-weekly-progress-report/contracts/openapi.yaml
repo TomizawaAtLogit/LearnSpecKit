@@ -1,0 +1,71 @@
+openapi: 3.0.3
+info:
+  title: Weekly Progress Report API
+  version: 0.1.0
+paths:
+  /projects:
+    get:
+      summary: List projects (filters: team, owner, status)
+      responses:
+        '200':
+          description: OK
+  /projects/{id}/updates:
+    get:
+      summary: Get updates for a project (latest first)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+    post:
+      summary: Create an update for a project
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: string
+                percent_complete:
+                  type: integer
+                blockers:
+                  type: string
+                next_steps:
+                  type: string
+      responses:
+        '201':
+          description: Created
+  /exports/projects/{id}:
+    post:
+      summary: Generate a weekly export for a project
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                format:
+                  type: string
+                  enum: [pdf, link]
+      responses:
+        '200':
+          description: Export generated. Returns { url | path }
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+security:
+  - bearerAuth: []
