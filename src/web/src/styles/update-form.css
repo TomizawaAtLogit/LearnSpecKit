@@ -1,0 +1,32 @@
+.update-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: var(--spacing-lg);
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text);
+}
+
+.form-group input[type="range"] {
+  width: calc(100% - 60px);
+  margin-right: var(--spacing-sm);
+}
+
+.form-group output {
+  display: inline-block;
+  min-width: 50px;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.form-group select,
+.form-group textarea {
+  width: 100%;
+}

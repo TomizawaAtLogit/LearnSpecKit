@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Updates - Weekly Progress Report</title>
+  <link rel="stylesheet" href="/src/styles/base.css">
+  <link rel="stylesheet" href="/src/styles/update-form.css">
+  <style>
+    .timeline {
+      margin-top: var(--spacing-xl);
+    }
+
+    .timeline-items {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-md);
+      margin-top: var(--spacing-lg);
+    }
+
+    .timeline-item {
+      border-left: 3px solid var(--color-border);
+      padding-left: var(--spacing-lg);
+    }
+
+    .timeline-header {
+      display: flex;
+      gap: var(--spacing-md);
+      align-items: center;
+      margin-bottom: var(--spacing-sm);
+      flex-wrap: wrap;
+    }
+
+    .status-badge {
+      padding: var(--spacing-xs) var(--spacing-sm);
+      border-radius: var(--border-radius);
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .status-on-track {
+      background: var(--color-success);
+      color: white;
+    }
+
+    .status-at-risk {
+      background: var(--color-warning);
+      color: white;
+    }
+
+    .status-blocked {
+      background: var(--color-danger);
+      color: white;
+    }
+
+    .progress-badge {
+      font-weight: 600;
+      color: var(--color-primary);
+    }
+
+    .timestamp {
+      color: var(--color-text-secondary);
+      font-size: 0.875rem;
+    }
+
+    .timeline-blockers,
+    .timeline-next {
+      margin-top: var(--spacing-sm);
+      color: var(--color-text-secondary);
+      font-size: 0.875rem;
+    }
+
+    .no-data {
+      color: var(--color-text-secondary);
+      text-align: center;
+      padding: var(--spacing-xl);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav-container">
+      <h1>Weekly Progress Report</h1>
+      <ul class="nav-menu">
+        <li><a href="/">Dashboard</a></li>
+        <li><a href="/project.html" class="active">Project</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main class="container">
+    <div id="app"></div>
+  </main>
+
+  <script type="module" src="/src/pages/project.js"></script>
+</body>
+</html>

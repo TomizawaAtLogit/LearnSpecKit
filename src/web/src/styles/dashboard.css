@@ -1,0 +1,114 @@
+.dashboard {
+  min-height: 50vh;
+}
+
+.dashboard-filters {
+  background: var(--color-bg);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-xl);
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.dashboard-filters select {
+  min-width: 200px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.project-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.card-header h3 {
+  font-size: 1.125rem;
+  margin: 0;
+}
+
+.card-header a {
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.card-header a:hover {
+  color: var(--color-primary);
+}
+
+.blocker-indicator {
+  font-size: 1.25rem;
+  cursor: help;
+}
+
+.project-meta {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.project-info {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.project-info div {
+  margin-bottom: var(--spacing-xs);
+}
+
+.project-blockers {
+  background: var(--color-bg-secondary);
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius);
+  font-size: 0.875rem;
+  margin-top: var(--spacing-sm);
+  border-left: 3px solid var(--color-warning);
+}
+
+.last-updated {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  margin-top: var(--spacing-md);
+}
+
+.no-projects {
+  text-align: center;
+  color: var(--color-text-secondary);
+  padding: var(--spacing-xl);
+  background: var(--color-bg);
+  border-radius: var(--border-radius);
+}
+
+@media (max-width: 768px) {
+  .dashboard-filters {
+    flex-direction: column;
+  }
+
+  .dashboard-filters select {
+    width: 100%;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
